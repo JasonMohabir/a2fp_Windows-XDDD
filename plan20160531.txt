@@ -1,1 +1,46 @@
-~~Plan 05-31~~
+//Team Windows XDDD
+//Demokratia
+
+/~~~~~~~~~Plan 2016/05/31~~~~~~~~~~/
+
+
+Not much has been accomplished in the task of coding this project. Only theoretical planning has occured.
+This means that various structures for storing the nodes have been considered, ranging from Array, ArrayList, and an Adjacency Matrix.
+
+The core functionality of this project is the creation of an interlinked node system. This will contain at minimum one node, that when interacted
+will have either a positive or negative effect on other set nodes. The goal of the interlinked system is to have up to six nodes that each impact
+each other in the same manner as listed before. 
+
+The extra functionalities utilize the other data structures discussed in class. There would be two meters that are omnipresent and are culminatively
+impacted by the interaction of the nodes. Depending on the levels of these meters, more options will be unlockable. Another functionality would be
+a queued series of events that occur in succession such as the collection of taxes or the appointment of elected official.
+
+In order to have any of these extra functionalities, the interface of the project has to be created and involve a working relationship between the two nodes.
+The route of development from there is either to add the extra functionalities and test to see how these structures could improve the experience of the 
+simulation at this point or to wait until more nodes are available to implement the extra ones.
+
+The tasks need to be delegated in a better manner. Up until this point, there has been a series of disorganization that has plagued us, due primarily for 
+procrastination. Jason will be in charge of the implementation of the interlinked node system. This means fleshing out which data structure to choose and 
+providing justification as to its utility. Lorenz will be in charge of the simulation element which adds the interest aspects to the program. Grace will be 
+in charge of implementing the extra functionalities, and work with the other two member to ensure that are both attainable as the ideals of the story may 
+not be practical with a certain data structure.
+
+Tentative Time Line:
+
+06/01: Complete the two node system. This system will include the ability to interact with one node and impact the other. The extra feature 
+would be to allow the nodes to change color, if Processing is utilized. On top of completing this first system, the data structures would need to be fleshed out
+even more to ensure that the future objectives to be accomplished effectively.
+
+06/02 - 06/05: Finish a node system that include at least four nodes. On top of that, start to implement the extra functionalities such as the overall meters.
+The four nodes will be complicated, which hints at the desired end complexity. 
+
+06/05 - 06/11:
+
+06/12 - 06/18:
+
+06/19 - 06/25:
+
+06/26 - infintium
+
+
+
