@@ -7,3 +7,7 @@ Began plan written
 ~06-01~
 Coding began!
 Node class written, yet to be tested
+
+When scrolled over, the two nodes created (poverty and welfare) augment with appropriate changes to the its fellow node
+Had to set minimum size for shrinking
+Still must figure out a way so it only happens when clicked & a way to choose whether to increase or decrease
