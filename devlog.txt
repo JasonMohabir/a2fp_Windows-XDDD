@@ -2,4 +2,8 @@
 
 ~05-31~
 Discussed node connections
-Began plan
+Began plan written
+
+~06-01~
+Coding began!
+Node class written, yet to be tested
