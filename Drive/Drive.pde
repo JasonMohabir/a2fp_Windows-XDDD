@@ -16,7 +16,7 @@ void draw() {
   mousePressed();
 }
 
-void mousePressed() {
+void mouseClicked() {
   if (mouseX <= _welfare.x + _welfare.rad && mouseX >= _welfare.x - _welfare.rad
       && mouseY <= _welfare.y + _welfare.rad && mouseY >= _welfare.y - _welfare.rad) {
     _welfare.grow(2);
