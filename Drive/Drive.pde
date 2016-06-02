@@ -1,6 +1,6 @@
 //===========NODES===========
-Node _welfare = new Node(300, 300, 50);
-Node _poverty = new Node (500, 300, 50);
+Node _welfare = new Node(300, 300, 50, "Welfare");
+Node _poverty = new Node (500, 300, 50, "Poverty");
 
 void setup() {
   size(800,600);

@@ -7,8 +7,9 @@ class Node {
   float x;
   float y;
   boolean unlocked;
+  String name;
   
-  Node(float _x, float _y, float _r) {
+  Node(float _x, float _y, float _r, String n) {
     pos = new ArrayList<Node>();
     neg = new ArrayList<Node>();
     c = color(135,206,250);
@@ -16,12 +17,16 @@ class Node {
     y = _y;
     rad = _r;//initial size
     unlocked = false;
+    name = n;
   }
   
   void draw() {
     fill(c);
     stroke(c);
     ellipse(x, y, rad, rad);
+    fill(0);
+    stroke(0);
+    text(name, x, y);
   }
   
   void addP(Node n) {
