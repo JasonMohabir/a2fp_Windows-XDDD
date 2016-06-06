@@ -1,6 +1,10 @@
 //==========Stages of Game=======
 int state = 0;
-  //0-->opening
+  //opening
+  //0
+  //1
+  //2
+  //end of opening
   //1-->overview screen
   //2-->
 
@@ -18,19 +22,30 @@ void setup() {
 }
 
 void draw() {
+  
   if (state == 0) {//opening
+  
+    String myText = "President ";
+  
     background(loadImage("Map.png"));
     fill(128, 128,128, 225);
     stroke(128, 128, 128, 225);
     rect(width/4, height/4, width/2, height/2);
     fill(0, 0, 255);
     stroke(0, 0, 255);
-    textFont(createFont("AmericanTypewriter-CondensedBold.ttf", 32));
-    text("DEMOKRATIA", width/2, height/3);
     textAlign(CENTER);
     textSize(30);
-String[] fontList = PFont.list();
-printArray(fontList);
+    text("DEMOKRATIA", width/2, height/3);
+    textSize(20);
+    text("BY THE PEOPLE, FOR THE PEOPLE", width/2, height/3 + 30);
+    fill(255,0,0);
+    stroke(255,0,0);
+    textSize(20);
+    text("What is your name?", width/2, height/2);
+    
+    void keyPressed() {
+      if (keyCode == BACKSPACE) {
+        if (
   }
   else {
   background(0);
