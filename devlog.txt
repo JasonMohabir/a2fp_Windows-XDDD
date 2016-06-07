@@ -18,3 +18,9 @@ Clicking fxn up and running
 
 ~06-03~
 Opening Sequence running
+
+~06-06~
+Name input begun
+
+~06-07~
+Name unput finished
