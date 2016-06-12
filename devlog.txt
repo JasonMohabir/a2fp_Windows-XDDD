@@ -28,3 +28,7 @@ Name unput finished
 ~06-10~
 OPENING DONE.
 Cursor change added
+
+
+~06-12~
+Comments added
