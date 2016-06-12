@@ -35,8 +35,7 @@ void mousePressed() {
 }
 
 void drawScreenZero() {
-    //background(loadImage("Map.png"));
-    background(51);
+    background(loadImage("Images/Map.png"));
     fill(128,128,128, 225);
     stroke(128,128, 128, 225);
     rect(width/4, height/4, width/2, height/2);
@@ -80,7 +79,8 @@ void drawScreenZero() {
 }
 
 void drawScreenOne() {
-  background(51);
+  cursor(ARROW);
+  background(loadImage("Images/Map.png"));
   
   fill(255, 255, 0);
   stroke(0, 0, 255, 175);
@@ -91,27 +91,19 @@ void drawScreenOne() {
   textAlign(CENTER);
   text("Selection Page", width/2, height/16);
   
-  fill(0,0,0);  
-  //stroke(random(255),random(255),random(255));
-  stroke(0,51,255);
-  rect(width/7, height/4, width/7, width/7);
+  image(loadImage("Images/Oz.png"), width/7, height/4, width/7, width/7);
+  image(loadImage("Images/Panem.png"), 3*width/7, height/4, width/7, width/7);  
+  image(loadImage("Images/Atlantis.png"), 5*width/7, height/4, width/7, width/7);    
+  image(loadImage("Images/Borduria.png"), 3*width/7, 3*height/4 - 50, width/7, width/7);
+
+  fill(128,128,128, 225);
+  stroke(128,128, 128, 225);
+  rect(width/7 - 100, height/2 + 20, width/6, height/10);
   
-  fill(0,0,0);  
-  //stroke(random(255),random(255),random(255));
-  stroke(0,51,255);
-  rect(3*width/7, height/4, width/7, width/7);
-  
-  fill(0,0,0);  
-  //stroke(random(255),random(255),random(255));
-  stroke(0,51,255);
-  rect(5*width/7, height/4, width/7, width/7);
+  fill(0,0,0);
+  stroke(255,255,255);
+  text("The Democratic Republic of OZ", width/7 + 75, height/2 + 35);
     
-  fill(0,0,0);  
-  //stroke(random(255),random(255),random(255));
-  stroke(0,51,255);
-  rect(3*width/7+10, 3*height/4, width/7-10, width/7-50);
-    
-  
 }
 
 void drawScreenTwo() {
