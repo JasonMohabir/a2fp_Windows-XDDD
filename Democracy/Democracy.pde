@@ -81,14 +81,37 @@ void drawScreenZero() {
 
 void drawScreenOne() {
   background(51);
+  
   fill(255, 255, 0);
   stroke(0, 0, 255, 175);
   rect(0, 0, width, height/8-1);
   
-  fill(255,255,255);  
+  fill(0,0,0);  
   stroke(255,255,255);
   textAlign(CENTER);
   text("Selection Page", width/2, height/16);
+  
+  fill(0,0,0);  
+  //stroke(random(255),random(255),random(255));
+  stroke(0,51,255);
+  rect(width/7, height/4, width/7, width/7);
+  
+  fill(0,0,0);  
+  //stroke(random(255),random(255),random(255));
+  stroke(0,51,255);
+  rect(3*width/7, height/4, width/7, width/7);
+  
+  fill(0,0,0);  
+  //stroke(random(255),random(255),random(255));
+  stroke(0,51,255);
+  rect(5*width/7, height/4, width/7, width/7);
+    
+  fill(0,0,0);  
+  //stroke(random(255),random(255),random(255));
+  stroke(0,51,255);
+  rect(3*width/7+10, 3*height/4, width/7-10, width/7-50);
+    
+  
 }
 
 void drawScreenTwo() {
@@ -103,7 +126,7 @@ void mouseClicked() {
     //save name
     state = 1;
   }
-  redraw();
+  //redraw();
 }
 void keyPressed() {
   if (state == 0) {
