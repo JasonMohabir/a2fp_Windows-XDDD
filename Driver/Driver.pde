@@ -8,9 +8,44 @@ float state = 0;
   //1-->overview screen
   //2-->
 
-//===========NODES===========
-Node _welfare = new Node(300, 300, 50, "Welfare");
-Node _poverty = new Node (500, 300, 50, "Poverty");
+/*
+Not sure where you want the ones I added to be located on the screen
+*/
+//===========TRACKER NODES===========
+//generally measures of how the country is doing
+Node _polcap = new Node(???, 300, 50, "Political Capital"); //the currency we use to enact action
+Node _income = new Node(???, 300, 50, "Total Income");
+Node _expenditure = new Node (???, 300, 50, "Total Expenditure");
+Node _totalhappiness = new Node(300, 300, 50, "Overall Happiness");
+Node _poverty = new Node(500, 300, 50, "Poverty");
+Node _health = new Node(???, 300, 50, "Health");
+Node _crime = new Node(???, 300, 50, "Crime");
+Node _oildemand = new Node(???, 300, 50, "Oil Demand");
+Node _oilprice = new Node(???, 300, 50, "Oil Price");
+Node _oilsupply = new Node(???, 300, 50, "Oil Supply");
+Node _unemployment = new Node(???, 300, 50, "Unemployment");
+Node _globaleconomy = new Node(???, 300, 50, "Global Economy");
+Node _education = new Node(???, 300, 50, "Education");
+Node _environment = new Node(???, 300, 50, "The Environment");
+Node _vehicleusage = new Node(???, 300, 50, "Vehicle Usage");
+Node _gdp = new Node(???, 300, 50, "GDP");
+Node _technology = new Node(???, 300, 50, "Technology");
+
+
+//==========POLICY NODES=========
+Node _incometax = new Node(???, 300, 50, "Income Tax");
+Node _salestax = new Node(???, 300, 50, "Sales Tax");
+Node _roadbuilding = new Node(???, 300, 50, "Road Building");
+Node _publictransport = new Node(???, 300, 50, "Subsidized Public Transport");
+Node _policeforce = new Node(???, 300, 50, "Police Force");
+Node _publicschools = new Node(???, 300, 50, "Public Schools");
+Node _cleanenergysubsidies = new Node(???, 300, 50, "Clean Energy Subsidies");
+Node _statepensions = new Node(???, 300, 50, "State Pensions");
+Node _statehousing = new Node(???, 300, 50, "State Housing");
+Node _statehealthcare = new Node(???, 300, 50, "State Healthcare");
+Node _militaryspending = new Node(???, 300, 50, "Military Spending");
+
+
 
 final int width = 1025;
 final int height = 518;
