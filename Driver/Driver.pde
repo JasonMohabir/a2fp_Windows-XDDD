@@ -1,26 +1,20 @@
 //==========Stages of Game=======
 float state = 0;
-  //opening
+  //OPENING(Name input)
   //0
-  //1
-  //2
-  //end of opening
-  //1-->overview screen
-  //2-->
 
-//===========NODES===========
-Node _welfare = new Node(300, 300, 50, "Welfare");
-Node _poverty = new Node (500, 300, 50, "Poverty");
-
+//==========Dimensions============
 final int width = 1025;
 final int height = 518;
+
+//==========Instance Vars=======
+String name = "DEFAULT";
+String country ="DEFAULT";
 
 String myText = "President ";
 
 void setup() {
   size(1025, 518);
-  _welfare.addN(_poverty);
-  _poverty.addN(_welfare);
 }
 
 void draw() {
@@ -29,23 +23,23 @@ void draw() {
   
     background(loadImage("Map.png"));
     
+    //Outer box
     fill(128, 128,128, 225);
     stroke(128, 128, 128, 225);
     rect(width/4, height/4, width/2, height/2);
     
+    //Text
     fill(0, 0, 255);
     stroke(0, 0, 255);
     textAlign(CENTER);
     textSize(30);
     text("DEMOKRATIA", width/2, height/3);
-    
     textSize(20);
     text("BY THE PEOPLE, FOR THE PEOPLE", width/2, height/3 + 30);
-
     textSize(20);
     text("What is your name?", width/3 + 15, height/2);
     textAlign(LEFT);
-    
+    //Input box
     fill(255, 255, 255);
     stroke(255, 255, 255);
     rect(width/3 + 120, height/2 - 20, 250,25);
@@ -53,15 +47,16 @@ void draw() {
     stroke(0);
     text(myText, width/3 + 120, height/2);
     
+    //Enter Button
     fill(0, 0, 255, 175);
     stroke(0, 0, 255, 175);
     rect(width/3 + 120, height/2 +40, 100, 50);
-
     fill(255,255,255);
     stroke(255,255,255);
     textAlign(CENTER);
     text("ENTER", width/3 + 130, height/2 + 50, 75, 50);
     
+    //Cursor change over Enter Button
     if (mouseX >= width/3 +120 && mouseX <= width/3 +205 && mouseY >= height/2 + 50 && mouseY <= height/2 + 100) {
       cursor(HAND);
     }
@@ -71,27 +66,31 @@ void draw() {
   }
   else {
   background(0);
-  _welfare.draw();
-  _poverty.draw();
-  
-  mousePressed();
   }
 }
 
+//User input fxn(Clicking) --> differs per stage of game
 void mouseClicked() {
-  if (mouseX >= width/3 + 120 && mouseX <= width/3 + 205 && mouseY >= height/2 +50 && mouseY <= height/2 +100) {
-    //save name
-    state = 1;
+  if (state ==0) {
+    if (mouseX >= width/3 + 120 && mouseX <= width/3 + 205 && mouseY >= height/2 +50 && mouseY <= height/2 +100) {
+      name = myText;
+      myText = "";
+      state = 1;
+    }
   }
 }
 
+//User input fxn(Typing) --> differs per stage of game
 void keyPressed() {
+  
+  //STAGE ONE (Name input)
   if (state == 0) {
-     if (keyCode == ENTER) {
-       //save name
+     if (keyCode == ENTER) {//If enter is pressed, submit name and move on
+       name = myText;
+       myText = "";
        state = 1;
      }
-    else if (keyCode == BACKSPACE) {
+    else if (keyCode == BACKSPACE) {//Delete existing text, cannot splice empty string
        if (myText.length() > 0) {
              myText = myText.substring(0, myText.length()-1);
         }
