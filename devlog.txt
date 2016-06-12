@@ -23,11 +23,14 @@ Opening Sequence running
 Name input begun
 
 ~06-07~
-Name unput finished
+Name input finished
 
 ~06-10~
 OPENING DONE.
 Cursor change added
+
+Added tracking nodes, not yet put in the context of processing
+Added policy and tax nodes, not yet put in the context of processing
 
 
 ~06-12~

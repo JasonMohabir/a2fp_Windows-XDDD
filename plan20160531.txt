@@ -21,7 +21,7 @@ simulation at this point or to wait until more nodes are available to implement 
 
 The tasks need to be delegated in a better manner. Up until this point, there has been a series of disorganization that has plagued us, due primarily for 
 procrastination. Jason will be in charge of the implementation of the interlinked node system. This means fleshing out which data structure to choose and 
-providing justification as to its utility. Lorenz will be in charge of the simulation element which adds the interest aspects to the program. Grace will be 
+providing justification as to its utility. Lorenz will be in charge of the simulation element which adds the interesting aspects to the program. Grace will be 
 in charge of implementing the extra functionalities, and work with the other two member to ensure that are both attainable as the ideals of the story may 
 not be practical with a certain data structure.
 
