@@ -2,11 +2,8 @@
 float state = 0;
   //OPENING(Name input)
   //0
-<<<<<<< HEAD
-=======
   //1
   //2
-  //end of opening
   //1-->overview screen
   //2-->
 
@@ -47,8 +44,6 @@ Node _statehousing = new Node(???, 300, 50, "State Housing");
 Node _statehealthcare = new Node(???, 300, 50, "State Healthcare");
 Node _militaryspending = new Node(???, 300, 50, "Military Spending");
 
-
->>>>>>> 600de1df8b4381875e96b4737584cdd2078edaef
 
 //==========Dimensions============
 final int width = 1025;
