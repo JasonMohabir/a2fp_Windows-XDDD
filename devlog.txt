@@ -29,9 +29,24 @@ Name input finished
 OPENING DONE.
 Cursor change added
 
-Added tracking nodes, not yet put in the context of processing
+Added tracking nodes, not yet put in the context of processing, just the basics
 Added policy and tax nodes, not yet put in the context of processing
+finished the entire selection process
+worked on class development
+worked on textboxes
 
+Day plan"
+1. the three boxes in the middle have text
+2. if you click a box the background changes
+3. you need to click a box to proceed
+4. once you click the button at the button, you are sent to the next stage
+"
 
 ~06-12~
 Comments added
+rewrite the driver file so it can work with three screen modes
+	-one will be the one grace has already
+	-one will be the selection screen, one will be with the actual nodes
+edited the Node class so that it has methods that allow it to change/edit other nodes
+finished adding fake flags for each box and a name for each country
+sprucing up
