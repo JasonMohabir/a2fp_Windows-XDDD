@@ -5,6 +5,7 @@ import java.util.Collection;
 // 2 - Game screen
 
 int state;
+int turn;
 
 final int width = 1025;
 final int height = 518;
@@ -15,24 +16,25 @@ String country;
 PImage flag;
 
 //===========TRACKER NODES===========
+//starting stats set at 50
 //generally measures of how the country is doing
-Node _polcap = new Node(50, "Political Capital"); //the currency we use to enact action
-Node _income = new Node(50, "Total Income");
-Node _expenditure = new Node (50, "Total Expenditure");
-Node _totalhappiness = new Node(50, "Overall Happiness");
-Node _poverty = new Node(50, "Poverty");
-Node _health = new Node(50, "Health");
-Node _crime = new Node(50, "Crime");
-Node _oildemand = new Node(50, "Oil Demand");
-Node _oilprice = new Node(50, "Oil Price");
-Node _oilsupply = new Node(50, "Oil Supply");
-Node _unemployment = new Node(50, "Unemployment");
-Node _globaleconomy = new Node(50, "Global Economy");
-Node _education = new Node(50, "Education");
-Node _environment = new Node(50, "The Environment");
-Node _vehicleusage = new Node(50, "Vehicle Usage");
-Node _gdp = new Node(50, "GDP");
-Node _technology = new Node(50, "Technology");
+Node _polcap = new Node(50, "Political Capital", 24); //the currency we use to enact action
+Node _income = new Node(50, "Total Income", 50);
+Node _expenditure = new Node (50, "Total Expenditure", 50);
+Node _totalhappiness = new Node(50, "Overall Happiness", 50);
+Node _poverty = new Node(50, "Poverty", 50);
+Node _health = new Node(50, "Health", 50);
+Node _crime = new Node(50, "Crime", 50);
+Node _oildemand = new Node(50, "Oil Demand", 50);
+Node _oilprice = new Node(50, "Oil Price", 50);
+Node _oilsupply = new Node(50, "Oil Supply", 50);
+Node _unemployment = new Node(50, "Unemployment", 50);
+Node _globaleconomy = new Node(50, "Global Economy", 50);
+Node _education = new Node(50, "Education", 50);
+Node _environment = new Node(50, "The Environment", 50);
+Node _vehicleusage = new Node(50, "Vehicle Usage", 50);
+Node _gdp = new Node(50, "GDP", 50);
+Node _technology = new Node(50, "Technology", 50);
 Node[] _collection = {_polcap, _income, _expenditure, _totalhappiness, _poverty, _health, _crime, _oildemand, _oilprice, _oilsupply, _unemployment, _globaleconomy, _education, _environment, _vehicleusage, _gdp, _technology};
 
 /*

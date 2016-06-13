@@ -28,6 +28,7 @@ Name input finished
 ~06-10~
 OPENING DONE.
 Cursor change added
+added accessors to Node class
 
 Added tracking nodes, not yet put in the context of processing, just the basics
 Added policy and tax nodes, not yet put in the context of processing
