@@ -11,10 +11,10 @@ class Node {
   int value;
   //^whatever the node is supposed to represent
   
-  Node(float _r, String n, int i) {
+  Node(float _r, String n, int i, color ci) {
     pos = new ArrayList<Node>();
     neg = new ArrayList<Node>();
-    c = color(135,206,250);
+    c = ci;
     x = (float)Math.random() * width;
     y = (float)Math.random() * height;
     rad= _r;//initial size
