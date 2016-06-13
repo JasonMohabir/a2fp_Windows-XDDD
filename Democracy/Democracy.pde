@@ -8,7 +8,7 @@ int state;
 
 final int width = 1025;
 final int height = 518;
-String myText = "Jim Morrison";
+String myText = "Surname";
 
 String name;
 String country;
@@ -177,7 +177,21 @@ void drawScreenOne() {
 }
 
 void drawScreenTwo() {
-  background(0, 0, 204);
+  background(loadImage("Images/Map.png"));
+  fill(128, 128, 128, 225);
+  stroke(128, 128, 128, 225);
+  rect(0,0, width, height);
+  
+  image(flag, 0, height - 100, 200, 100);
+  fill(0,0,0);
+  stroke(0,0,0);
+  rect(0, height - 125, 200, 25);
+  
+  fill(255, 255, 255);
+  stroke(255,255,255);
+  textSize(10);
+  text("The " + name + " Administration of " + country, 100, height - 110);
+  
   for (Node s : _collection) {
     s.draw();
   }
@@ -211,7 +225,7 @@ void mouseClicked() {
     }
     else if (mouseX >= 3*width/7 && mouseY >= 3*height/4 - 50 && mouseX <= 4*width/7 && mouseY <= 3*height/4 - 50 + width/7) {
       country = "Borduria";
-      flag = loadImage("Image/Borduria.png");
+      flag = loadImage("Images/Borduria.png");
       state = 2;
     }
   }
