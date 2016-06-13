@@ -198,7 +198,7 @@ void drawScreenTwo() {
   }
 }
 
-void drawScreenThree(Node n) {
+void drawScreenThree(Node n) {  
   
   background(loadImage("Images/Map.png"));
   fill(128, 128, 128, 225);
@@ -224,6 +224,22 @@ void drawScreenThree(Node n) {
   text("You have selected to modify " + n.name + " in " + country + ".", width/2, height/4 + 20);
   text("How would you like to exercise your executive power?", width/2, height/4 + 40);
   
+  rect(width/2 - 65, height/2 - 20, width/7, height/10);
+  textSize(40);
+  text("+", width/2 + width/7, height/2 + 20);
+  text("-", width/2 - width/7, height/2 + 20);
+  
+  fill(0,0,0);
+  stroke(0,0,0);
+  textSize(20);
+  text(myText, width/2 + 10, height/2 + 10);
+  
+  if (keyCode == ENTER) {
+    state = 2;
+    n.set(parseInt(myText));
+    myText = null;
+    keyCode = SHIFT;
+  }
 
 }
 
@@ -263,6 +279,7 @@ void mouseClicked() {
     for (Node n: _collection){
       if (n.getColor() == get(mouseX, mouseY)){
         curr = n;
+        myText = "" + n.get();
         state = 3;
       }
     }
@@ -280,6 +297,18 @@ void keyPressed() {
         myText = myText.substring(0, myText.length()-1);
       }
     } else if (myText.length() < 24 && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT) {
+      myText += key;
+    }
+  }
+  
+  if (state == 3) {
+    if (keyCode == BACKSPACE) {
+      if (myText.length() > 0) {
+        myText = myText.substring(0, myText.length()-1);
+      }
+    }
+    //FIGURE OUT A WAY SO THAT ONLY NUMBERS CAN BE TYPED
+    else if (myText.length() < 3 && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT) {
       myText += key;
     }
   }
