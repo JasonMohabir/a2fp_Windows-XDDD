@@ -9,7 +9,7 @@ int turn;
 
 final int width = 1025;
 final int height = 518;
-String myText = "Surname";
+String myText = "Back up! You need a name!";
 
 String name;
 String country;
