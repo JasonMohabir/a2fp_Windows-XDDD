@@ -211,6 +211,16 @@ void drawScreenTwo() {
     _collection[i].y = (i/4 * height / 4) + 50;
     _collection[i].draw();
   }
+  
+    for (Node n: _collection){
+      if (n.getColor() == get(mouseX, mouseY)){
+        cursor(HAND);
+        break;
+      }
+      else {
+        cursor(ARROW);
+      }
+    }
 }
 
 void drawScreenThree(Node n) {  
@@ -240,17 +250,24 @@ void drawScreenThree(Node n) {
   text("How would you like to exercise your executive power?", width/2, height/4 + 40);
   
   rect(width/2 - 65, height/2 - 20, width/7, height/10);
-  textSize(40);
   
-  fill(0,0,255);
+  textSize(50);
+  fill(255,255,255);
   text("+", width/2 + width/7, height/2 + 20);
-  fill(255,0,0);
+  fill(255,255,255);
   text("-", width/2 - width/7, height/2 + 20);
   
   fill(0,0,0);
   stroke(0,0,0);
   textSize(20);
   text(myText, width/2 + 10, height/2 + 10);
+  
+  if (color(255, 255, 255) == get(mouseX, mouseY) && (mouseX > width/2 + width/14 || mouseX < width/2 - width/14)){
+     cursor(HAND);
+   }
+   else {
+      cursor(ARROW);
+    }
   
   
   /*
@@ -264,7 +281,7 @@ void drawScreenThree(Node n) {
   if (keyCode == ENTER && ((_polcap -= 1) > 0)) {
       n.set(parseInt(myText)); 
       state = 2;
-      _polcap -= 1;
+      keyCode = SHIFT;//keyCode cannot be ENTER anymore. SHIFT serves as a placeholder
     }
 
 
@@ -320,10 +337,12 @@ void mouseClicked() {
     if (color(255) == get(mouseX, mouseY)) {
       if (mouseX > width/2) {
         myText = "" + (Integer.parseInt(myText) + 1);
+        _polcap -= 1;
       }
         
       else if (mouseX < width/2) {
         myText = "" + (Integer.parseInt(myText) - 1);
+        _polcap += 1;
       }
      
       }
