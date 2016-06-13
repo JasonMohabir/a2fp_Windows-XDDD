@@ -191,8 +191,10 @@ void drawScreenTwo() {
   textSize(10);
   text("The " + name + " Administration of " + country, 100, height - 110);
   
-  for (Node s : _collection) {
-    s.draw();
+  for (int i = 0; i < _collection.length; i++) {
+    _collection[i].x = (i%5 * width / 6) + width / 6;
+    _collection[i].y = (i/4 * height / 4) + 50;
+    _collection[i].draw();
   }
 }
 
@@ -224,9 +226,6 @@ void drawScreenThree(Node n) {
   
 
 }
-
-
-
 
 void mouseClicked() {
   
