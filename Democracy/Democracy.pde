@@ -5,6 +5,7 @@ import java.util.Collection;
 // 2 - Game screen
 
 int state;
+int turn;
 
 final int width = 1025;
 final int height = 518;
