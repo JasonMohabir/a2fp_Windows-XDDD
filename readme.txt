@@ -28,6 +28,8 @@ Modeled after PositechGames' Democracy 3, we seek to simulate, if only on the ba
 All questions that you can attempt to answer by giving Demokratia a spin.
 
 HOW TO USE:
+Run Democracy.pde from the terminal.
+
 The game is all largely click-based with you being prompted to input your name in text.
 
 The game is incomplete and has a few bugs, but we'll seek to remedy that ASAP.
