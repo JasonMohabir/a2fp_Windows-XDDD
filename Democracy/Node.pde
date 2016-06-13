@@ -23,6 +23,11 @@ class Node {
     value = i;
   }
   
+  
+  color getColor(){
+   return c;     
+  }
+  
   void set(int newValue) {
     value = newValue;
   }
