@@ -8,8 +8,10 @@ class Node {
   float y;
   boolean unlocked;
   String name;
+  int value;
+  //^whatever the node is supposed to represent
   
-  Node(float _r, String n) {
+  Node(float _r, String n, int i) {
     pos = new ArrayList<Node>();
     neg = new ArrayList<Node>();
     c = color(135,206,250);
@@ -18,6 +20,15 @@ class Node {
     rad= _r;//initial size
     unlocked = false;
     name = n;
+    value = i;
+  }
+  
+  void set(int newValue) {
+    value = newValue;
+  }
+  
+  int get() {
+    return value;
   }
   
   void draw() {
