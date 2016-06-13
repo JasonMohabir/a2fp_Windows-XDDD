@@ -138,17 +138,17 @@ void drawScreenOne() {
   textAlign(CENTER);
   text("Choose a Country", width/2, height/12);
 
+  fill(128, 128, 128, 225);
+  stroke(128, 128, 128, 225);
+  rect(width/7 - 10, height/4 - 10, width/7 + 20, height/3 + 15);
+  rect(3*width/7 - 10, height/4 - 10, width/7 + 20, height/3 + 15);
+  rect(5*width/7 - 10, height/4 - 10, width/7 + 20, height/3 + 15);
+  rect(3*width/7 - 10, 2*height/3 - 20, width/7 + 20, height/3 + 15);
+  
   image(loadImage("Images/Oz.png"), width/7, height/4, width/7, width/7);
   image(loadImage("Images/Panem.png"), 3*width/7, height/4, width/7, width/7);  
   image(loadImage("Images/Atlantis.png"), 5*width/7, height/4, width/7, width/7);    
   image(loadImage("Images/Borduria.png"), 3*width/7, 3*height/4 - 50, width/7, width/7);
-
-  fill(128, 128, 128, 225);
-  stroke(128, 128, 128, 225);
-  rect(width/7 - 3, height/2 + 15, width/7 + 4, height/14);
-  rect(3*width/7 - 3, height/2 + 15, width/7 + 4, height/14);
-  rect(5*width/7 - 3, height/2 +15, width/7 + 4, height/14);
-  rect(3*width/7 - 3, 3*height/4 + 95, width/7 + 4, height/14);
 
   textSize(20);
   fill(0, 0, 0);
@@ -156,7 +156,7 @@ void drawScreenOne() {
   text("The Land of Oz", width/7 + 72, height/2 + 40);
   text("Panem", 3*width/7 + 72, height/2 + 40);
   text("Atlantis", 5*width/7 + 72, height/2 +40);
-  text("Borduria", 3*width/7 + 72, 3*height/4 + 120);
+  text("Borduria", 3*width/7 + 72, 3*height/4 + 115);
   
   if (mouseX >= width/7 && mouseY >= height/4 && mouseX <= 2*width/7 && mouseY <= height/4 + width/7) {
     cursor(HAND);
