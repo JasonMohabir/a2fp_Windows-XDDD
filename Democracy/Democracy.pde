@@ -3,6 +3,7 @@ import java.util.Collection;
 // 0 - Opening screen
 // 1 - Select country
 // 2 - Game screen
+// 3 - Node Selected
 
 int state;
 int turn;
@@ -14,6 +15,7 @@ String myText = "Back up! You need a name!";
 String name;
 String country;
 PImage flag;
+Node curr;
 
 //===========TRACKER NODES===========
 //starting stats set at 50
@@ -70,6 +72,9 @@ void draw() {
     break;
   case 2: 
     drawScreenTwo(); 
+    break;
+  case 3:
+    drawScreenThree(curr);
     break;
   default: 
     background(0); 
@@ -192,6 +197,7 @@ void drawScreenTwo() {
 }
 
 void drawScreenThree(Node n) {
+  
   background(loadImage("Images/Map.png"));
   fill(128, 128, 128, 225);
   stroke(128, 128, 128, 225);
@@ -204,8 +210,17 @@ void drawScreenThree(Node n) {
   
   fill(255, 255, 255);
   stroke(255,255,255);
+  textAlign(CENTER);
   textSize(10);
-  text("Updating: " + n.name, 100, height - 110);
+  text("The " + name + " Administration of " + country, 100, height - 110);
+  
+  fill(0,0,0);
+  rect(width/4, height/4, width/2, height/2);
+  
+  fill(255, 255, 255);
+  textSize(15);
+  text("You have selected to modify " + n.name + " in " + country + ".", width/2, height/4 + 20);
+  text("How would you like to exercise your executive power?", width/2, height/4 + 40);
   
 
 }
@@ -245,10 +260,11 @@ void mouseClicked() {
     }
   }
   
-  else if (state == 2 && !(g.backgroundColor == 128)){
+  else if (state == 2 && get(mouseX, mouseY) == color(135,206,250)){
     for (Node n: _collection){
-      if (n.getColor() == g.backgroundColor){
-        drawScreenThree(n);
+      if (n.getColor() == get(mouseX, mouseY)){
+        curr = n;
+        state = 3;
       }
     }
     
