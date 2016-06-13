@@ -9,12 +9,12 @@ class Node {
   boolean unlocked;
   String name;
   
-  Node(float _x, float _y, float _r, String n) {
+  Node(float _r, String n) {
     pos = new ArrayList<Node>();
     neg = new ArrayList<Node>();
     c = color(135,206,250);
-    x = _x;
-    y = _y;
+    //x = _x;
+    //y = _y;
     rad = _r;//initial size
     unlocked = false;
     name = n;
