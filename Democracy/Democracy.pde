@@ -20,7 +20,11 @@ Node curr;
 //===========TRACKER NODES===========
 //starting stats set at 50
 //generally measures of how the country is doing
-Node _polcap = new Node(50, "Political Capital", 24, color(135,206,250)); //the currency we use to enact action
+
+
+int _polcap = 50;
+
+//Node _polcap = new Node(50, "Political Capital", 24, color(135,206,250)); //the currency we use to enact action
 Node _income = new Node(50, "Total Income", 50, color(135,206,249));
 Node _expenditure = new Node (50, "Total Expenditure", 50, color(135,206,248));
 Node _totalhappiness = new Node(50, "Overall Happiness", 50, color(135,206,247));
@@ -37,7 +41,7 @@ Node _environment = new Node(50, "The Environment", 50, color(135,206,237));
 Node _vehicleusage = new Node(50, "Vehicle Usage", 50, color(135,206,236));
 Node _gdp = new Node(50, "GDP", 50, color(135,206,235));
 Node _technology = new Node(50, "Technology", 50, color(135,206,234));
-Node[] _collection = {_polcap, _income, _expenditure, _totalhappiness, _poverty, _health, _crime, _oildemand, _oilprice, _oilsupply, _unemployment, _globaleconomy, _education, _environment, _vehicleusage, _gdp, _technology};
+Node[] _collection = {_income, _expenditure, _totalhappiness, _poverty, _health, _crime, _oildemand, _oilprice, _oilsupply, _unemployment, _globaleconomy, _education, _environment, _vehicleusage, _gdp, _technology};
 
 /*
 //==========POLICY NODES=========
@@ -63,6 +67,11 @@ void setup() {
 }
 
 void draw() {
+  
+  PFont georgia;
+  georgia = createFont("Georgia",30);
+  textFont(georgia);
+  
   switch(state) {
   case 0: 
     drawScreenZero(); 
@@ -185,6 +194,12 @@ void drawScreenTwo() {
   fill(0,0,0);
   stroke(0,0,0);
   rect(0, height - 125, 200, 25);
+
+  fill(0, 0, 0);
+  stroke(255,255,255);
+  textSize(10);
+  text("Political Capital: " + _polcap, 50, 50);
+  
   
   fill(255, 255, 255);
   stroke(255,255,255);
@@ -226,7 +241,10 @@ void drawScreenThree(Node n) {
   
   rect(width/2 - 65, height/2 - 20, width/7, height/10);
   textSize(40);
+  
+  fill(0,0,255);
   text("+", width/2 + width/7, height/2 + 20);
+  fill(255,0,0);
   text("-", width/2 - width/7, height/2 + 20);
   
   fill(0,0,0);
@@ -234,14 +252,27 @@ void drawScreenThree(Node n) {
   textSize(20);
   text(myText, width/2 + 10, height/2 + 10);
   
-  if (keyCode == ENTER) {
-    state = 2;
-    n.set(parseInt(myText));
-    myText = null;
-    keyCode = SHIFT;
-  }
+  
+  /*
+  fill(0,0,0);
+  rect(width/4 + 10, height/4 + 10, width/4, height/4);
+  fill(255, 0, 0);
+  textSize(15);
+  text("EXECUTE YOUR ORDER", width/4 + 10, height/4 + 10);
+  */
+  
+  if (keyCode == ENTER && ((_polcap -= 1) > 0)) {
+      n.set(parseInt(myText)); 
+      state = 2;
+      _polcap -= 1;
+    }
+
+
 
 }
+     
+
+
 
 void mouseClicked() {
   
@@ -287,15 +318,18 @@ void mouseClicked() {
   
   else if (state == 3) {
     if (color(255) == get(mouseX, mouseY)) {
-      if (mouseX > width/2 -65 && mouseY > height/3) {
+      if (mouseX > width/2) {
         myText = "" + (Integer.parseInt(myText) + 1);
       }
-      else if (mouseX < width/2 && mouseY < height/3) {
-        myText = "" + (Integer.parseInt(myText) -1);
+        
+      else if (mouseX < width/2) {
+        myText = "" + (Integer.parseInt(myText) - 1);
       }
-    }
-  }
+     
+      }
+    }      
 }
+  
 void keyPressed() {
   if (state == 0) {
     if (keyCode == ENTER) {
@@ -309,7 +343,7 @@ void keyPressed() {
       myText += key;
     }
   }
-  
+ /* 
   if (state == 3) {
     if (keyCode == BACKSPACE) {
       if (myText.length() > 0) {
@@ -321,4 +355,5 @@ void keyPressed() {
       myText += key;
     }
   }
+  */
 }
