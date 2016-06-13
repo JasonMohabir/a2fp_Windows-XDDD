@@ -342,7 +342,7 @@ void mouseClicked() {
         
       else if (mouseX < width/2) {
         myText = "" + (Integer.parseInt(myText) - 1);
-        _polcap += 1;
+        _polcap -= 1;
       }
      
       }
