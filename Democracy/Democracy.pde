@@ -283,8 +283,17 @@ void mouseClicked() {
         state = 3;
       }
     }
-    
-    
+  }
+  
+  else if (state == 3) {
+    if (color(255) == get(mouseX, mouseY)) {
+      if (mouseX > width/2 -65 && mouseY > height/3) {
+        myText = "" + (Integer.parseInt(myText) + 1);
+      }
+      else if (mouseX < width/2 && mouseY < height/3) {
+        myText = "" + (Integer.parseInt(myText) -1);
+      }
+    }
   }
 }
 void keyPressed() {
