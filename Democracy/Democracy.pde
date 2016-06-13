@@ -77,14 +77,6 @@ void draw() {
   }
 }
 
-void mousePressed() {
-  //  String s = "The quick brown fox jumped over the lazy dog.";
-  fill(50);
-  //text(s, 10, 10, 70, 80);  // Text wraps within text box
-  //state++;
-  //if (state > 2) { state = 0; }
-}
-
 void drawScreenZero() {
   background(loadImage("Images/Map.png"));
   fill(128, 128, 128, 225);
@@ -199,6 +191,27 @@ void drawScreenTwo() {
   }
 }
 
+void drawScreenThree(Node n) {
+  background(loadImage("Images/Map.png"));
+  fill(128, 128, 128, 225);
+  stroke(128, 128, 128, 225);
+  rect(0,0, width, height);
+  
+  image(flag, 0, height - 100, 200, 100);
+  fill(0,0,0);
+  stroke(0,0,0);
+  rect(0, height - 125, 200, 25);
+  
+  fill(255, 255, 255);
+  stroke(255,255,255);
+  textSize(10);
+  text("Updating: " + n.name, 100, height - 110);
+  
+
+}
+
+
+
 
 void mouseClicked() {
   
@@ -231,7 +244,16 @@ void mouseClicked() {
       state = 2;
     }
   }
-
+  
+  else if (state == 2 && !(g.backgroundColor == 128)){
+    for (Node n: _collection){
+      if (n.getColor() == g.backgroundColor){
+        drawScreenThree(n);
+      }
+    }
+    
+    
+  }
 }
 void keyPressed() {
   if (state == 0) {
