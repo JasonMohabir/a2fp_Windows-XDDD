@@ -10,7 +10,7 @@ int turn;
 
 final int width = 1025;
 final int height = 518;
-String myText = "Back up! You need a name!";
+String myText = "YiDong";
 
 String name;
 String country;
@@ -64,6 +64,7 @@ void setup() {
   //noStroke();
   //smooth();
   state = 0;
+  turn = 0;
 }
 
 void draw() {
@@ -346,7 +347,7 @@ void mouseClicked() {
       }
      
       }
-    }      
+    }
 }
   
 void keyPressed() {
