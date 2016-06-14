@@ -10,7 +10,7 @@ int turn;
 
 final int width = 1025;
 final int height = 518;
-String myText = "YiDong";
+String myText = "Back up! You need a name!";
 
 String name;
 String country;
@@ -43,6 +43,7 @@ Node _gdp = new Node(50, "GDP", 50, color(135,206,235));
 Node _technology = new Node(50, "Technology", 50, color(135,206,234));
 Node[] _collection = {_income, _expenditure, _totalhappiness, _poverty, _health, _crime, _oildemand, _oilprice, _oilsupply, _unemployment, _globaleconomy, _education, _environment, _vehicleusage, _gdp, _technology};
 
+Stat stat;
 /*
 //==========POLICY NODES=========
  Node _incometax = new Node(???, 300, 50, "Income Tax");
@@ -64,7 +65,7 @@ void setup() {
   //noStroke();
   //smooth();
   state = 0;
-  turn = 0;
+  stat = new Stat();
 }
 
 void draw() {
@@ -85,6 +86,9 @@ void draw() {
     break;
   case 3:
     drawScreenThree(curr);
+    break;
+  case 4:
+    drawScreenFour();
     break;
   default: 
     background(0); 
@@ -200,6 +204,7 @@ void drawScreenTwo() {
   stroke(255,255,255);
   textSize(10);
   text("Political Capital: " + _polcap, 50, 50);
+  text("STAT: " + stat.getPolcap(), 80, 80);
   
   
   fill(255, 255, 255);
@@ -222,6 +227,19 @@ void drawScreenTwo() {
         cursor(ARROW);
       }
     }
+    
+  fill(255, 255, 255);
+  stroke(255, 255, 255);
+  textAlign(CENTER);
+  text("NEXT TURN", width/3 + 130, height/2 + 50, 75, 50);
+
+  if (mouseX >= width/3 +120 && mouseX <= width/3 +205 && mouseY >= height/2 + 50 && mouseY <= height/2 + 100) {
+    cursor(HAND);
+    stat.updatePolcap(_polcap);
+    state = 4;
+  } else {
+    cursor(ARROW);
+  }
 }
 
 void drawScreenThree(Node n) {  
@@ -285,11 +303,27 @@ void drawScreenThree(Node n) {
       keyCode = SHIFT;//keyCode cannot be ENTER anymore. SHIFT serves as a placeholder
     }
 
-
-
 }
      
+void drawScreenFour() {
+  background(loadImage("Images/Map.png"));
+  fill(128, 128, 128, 225);
+  stroke(128, 128, 128, 225);
+  rect(0,0, width, height);
+  
+  image(flag, 0, height - 100, 200, 100);
+  fill(0,0,0);
+  stroke(0,0,0);
+  rect(0, height - 125, 200, 25);
 
+  fill(0, 0, 0);
+  stroke(255,255,255);
+  textSize(10);
+  text("CURRENT POL CAP: " + _polcap, 50, 50);
+  stat.resetPolcap();
+  text("RESET STAT: " + stat.getPolcap(), 80, 80);
+  
+}
 
 
 void mouseClicked() {
@@ -347,7 +381,8 @@ void mouseClicked() {
       }
      
       }
-    }
+      stat.updatePolcap(_polcap);
+    }      
 }
   
 void keyPressed() {
