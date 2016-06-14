@@ -235,7 +235,7 @@ void drawScreenTwo() {
 
   if (mouseX >= width/3 +120 && mouseX <= width/3 +205 && mouseY >= height/2 + 50 && mouseY <= height/2 + 100) {
     cursor(HAND);
-    stat.updatePolcap(_polcap);
+    stat.updatePolCap(_polcap);
     state = 4;
   } else {
     cursor(ARROW);
@@ -381,7 +381,7 @@ void mouseClicked() {
       }
      
       }
-      stat.updatePolcap(_polcap);
+      stat.updatePolCap(_polcap);
     }      
 }
   
