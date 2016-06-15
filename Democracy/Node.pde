@@ -10,6 +10,7 @@ class Node {
   String name;
   int value;
   //^whatever the node is supposed to represent
+  int tempValue;
   
   Node(float _r, String n, int i, color ci) {
     pos = new ArrayList<Node>();

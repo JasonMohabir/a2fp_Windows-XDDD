@@ -18,4 +18,4 @@ class Stat {
     return polcap;
   }
   
- }//end of class Stat
+}

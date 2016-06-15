@@ -1,3 +1,4 @@
+//import java.util.HashMap.Node;
 import java.util.Collection;
 //Stages of Game
 // 0 - Opening screen
@@ -231,16 +232,17 @@ void drawScreenTwo() {
   fill(255, 255, 255);
   stroke(255, 255, 255);
   textAlign(CENTER);
+  textSize(10);
   text("NEXT TURN", width/3 + 130, height/2 + 50, 75, 50);
-
-  if (mouseX >= width/3 +120 && mouseX <= width/3 +205 && mouseY >= height/2 + 50 && mouseY <= height/2 + 100) {
+  if (mouseX >= width/3 +130 && mouseX <= width/3 +205 && mouseY >= height/2 + 50 && mouseY <= height/2 + 100) {
     cursor(HAND);
+    if (mousePressed){
     stat.updatePolCap(_polcap);
-    state = 4;
-  } else {
-    cursor(ARROW);
+    state = 4;}
   }
-}
+  
+  }
+
 
 void drawScreenThree(Node n) {  
   
@@ -322,8 +324,30 @@ void drawScreenFour() {
   text("CURRENT POL CAP: " + _polcap, 50, 50);
   stat.resetPolcap();
   text("RESET STAT: " + stat.getPolcap(), 80, 80);
-  
+   
+  for (Node n: _collection){
+      n.tempValue = n.get();}
+    
+  PImage img = loadImage("Images/Gears.png");
+  image(img,width/8,height/8);
+  fill(128, 128, 128, 225);
+  stroke(128, 128, 128, 225);
+    
+    
+  fill(255, 255, 255);
+  stroke(255, 255, 255);
+  textAlign(CENTER);
+  text("UPDATE", width/3 + 130, height/2 + 100, 75, 50);
+
+  if (mouseX >= width/3 +130 && mouseX <= width/3 +215 && mouseY >= height/2 + 50 && mouseY <= height/2 + 100) {
+    cursor(HAND);
+    if (mousePressed){
+    state = 2;} 
+  }
+
 }
+  
+
 
 
 void mouseClicked() {
@@ -396,7 +420,25 @@ void keyPressed() {
       }
     } else if (myText.length() < 24 && keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT) {
       myText += key;
+  
     }
+  
+  if (state == 2){
+     if (keyCode == ENTER) {
+     state = 4;
+  }}
+  
+    if (state == 3){
+     if (keyCode == ENTER) {
+     state = 2;
+  }}
+    
+  if (state == 4){
+     if (keyCode == ENTER) {
+     state = 2;
+  }}
+  
+  
   }
  /* 
   if (state == 3) {
